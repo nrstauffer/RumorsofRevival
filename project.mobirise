@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "RoR",
-    "currentPage": "hope.html",
+    "currentPage": "index.html",
     "theme": {
       "name": "branchm4",
       "title": "BranchM4",
@@ -54,7 +54,7 @@
     "siteUrl": false,
     "gdpr": false,
     "uniqCompNum": 38,
-    "versionPublish": "4.12.3",
+    "versionPublish": "5.2.0",
     "screenshot": "screenshot.png",
     "cookiesAlert": false
   },
@@ -632,106 +632,6 @@
           "_params": {}
         },
         {
-          "alias": false,
-          "_styles": {
-            "& when not (@fullScreen)": {
-              "padding-top": "(@paddingTop * 15px)",
-              "padding-bottom": "(@paddingBottom * 15px)"
-            },
-            "& when (@bg-type = \"color\")": {
-              "background-color": "@bg-value"
-            },
-            "& when (@bg-type = \"image\")": {
-              "background-image": "url(@bg-value)"
-            },
-            ".container-fluid": {
-              "position": "relative"
-            },
-            ".page-title-content": {
-              "width": "(@textWidth * 1%)",
-              ".mbr-iconfont": {
-                "font-size": "55px",
-                "height": "55px",
-                "line-height": "55px",
-                "width": "55px",
-                "margin-top": "-10px",
-                "color": "#f1a631",
-                "&:hover": {
-                  "cursor": "pointer"
-                }
-              }
-            },
-            "@media (max-width: 576px)": {
-              ".page-title-content": {
-                "text-align": "center"
-              }
-            },
-            ".title": {
-              "letter-spacing": "0.8px",
-              "margin-top": "24px",
-              "font-weight": "300",
-              "margin": "0",
-              "position": "relative",
-              "word-wrap": "break-word"
-            },
-            "a": {
-              "line-height": "1",
-              "text-decoration": "none",
-              "cursor": "pointer",
-              "position": "relative",
-              "overflow": "hidden",
-              "&:not(:first-child)": {
-                "margin-left": "20px"
-              },
-              "&:after": {
-                "position": "absolute",
-                "margin-top": "7px",
-                "background-color": "currentColor",
-                "display": "block",
-                "content": "\"\"",
-                "height": "2px",
-                "width": "100%"
-              },
-              "&::before": {
-                "position": "absolute",
-                "margin-top": "5px",
-                "background-color": "currentColor",
-                "display": "block",
-                "content": "\"\"",
-                "height": "2px",
-                "width": "0%",
-                "bottom": "7px"
-              },
-              "&:hover:after, &:focus:after": {
-                "animation-duration": "1s",
-                "animation-name": "slidein"
-              },
-              "&:hover:before, &:focus:before": {
-                "animation-duration": "0.5s",
-                "animation-delay": "0.5s",
-                "animation-name": "slideout"
-              }
-            },
-            "a.text-white:hover, a.text-white:focus": {
-              "color": "#ffffff !important"
-            },
-            ".mbr-section-btn": {
-              "margin-left": "0",
-              "margin-right": "0"
-            }
-          },
-          "_name": "title01",
-          "_customHTML": "<section class=\"title01\" group=\"Titles\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"15\" step=\"1\" value=\"4\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"15\" step=\"1\" value=\"3\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Text Width\" name=\"textWidth\" min=\"0\" max=\"100\" step=\"1\" value=\"100\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Icon\" name=\"showIcons\">\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n        <input type=\"checkbox\" title=\"Button\" name=\"showButton\">\n        <hr>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background1.jpg\" parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#1c1c1c\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#1a214a\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div mbr-class=\"{'container-fluid': fullWidth, 'container': !fullWidth }\">\n        <div class=\"row\">\n            <div class=\"col-12 align-center column\">\n                <div class=\"page-title-content d-inline-block align-top\">\n                    <div class=\"icon-section align-center mb-4\">\n                        <span mbr-icon class=\"icon1 mbr-iconfont mb-0 mbri-setting3\" mbr-if=\"showIcons\" data-app-selector=\".page-title-content .title\"></span>\n                    </div>\n\n                    <h1 class=\"mbr-section-title title mbr-white mbr-fonts-style w-100 mb-4\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".page-title-content .title, .icon-section, .mbr-section-btn\">\n                        Our first single <b>Two Sided Story </b>available now on all platforms!</h1>\n                    \n                    <iframe width=\"100%\" height=\"150\" src=\"https://embed.song.link/?url=https%3A%2F%2Fsong.link%2Fj0Sjhsb890s92&theme=dark\" frameborder=\"0\" allowfullscreen sandbox=\"allow-same-origin allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox\"></iframe>\n                   \n                    <p class=\"text mbr-fonts-style mbr-regular mbr-text mbr-white mb-4\" mbr-if=\"showText\" data-app-selector=\".text\" mbr-theme-style=\"display-7\">EVEN as the sun with purple-colour'd face\n                        Had ta'en his last leave of the weeping morn,\n                        Rose-cheek'd Adonis hied him to the chase;\n                        Hunting he loved, but love he laugh'd to scorn;\n                        Sick-thoughted Venus makes amain unto him,\n                        And like a bold-faced suitor 'gins to woo him.</p>\n\n                    <div class=\"link-wrap\" mbr-if=\"showButton\">\n                        <div class=\"mbr-section-btn\" mbr-buttons=\"true\" mbr-theme-style=\"display-4\" data-toolbar=\"mbrBtnMove,mbrBtnLink,mbrBtnAdd\"><a class=\"mbr-section-subtitle text-white mbr-light pb-3 mbr-fonts-style d-inline-block\" data-app-selector=\".mbr-section-subtitle\" data-app-placeholder=\"Type Text\" href=\"https://song.link/j0sjhsb890s92\">\n                                Listen Here!</a></div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n    \n</section>",
-          "_cid": "s8HYMdckrQ",
-          "_anchor": "title01-s",
-          "_PHPplaceholders": [],
-          "_JSplaceholders": [],
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {}
-        },
-        {
           "_name": "header7",
           "_styles": {
             "& when not (@fullScreen)": {
@@ -777,7 +677,7 @@
               }
             }
           },
-          "_customHTML": "<section group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"15\" step=\"1\" value=\"15\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"15\" step=\"1\" value=\"15\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Sub Title\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Button\" name=\"showButton\">\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/img-9379-2000x1333.jpg\" parallax selected>\n            <input type=\"color\" title=\"Background Color\" value=\"#000000\">\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.3\" condition=\"overlay && bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div class=\"container-fluid align-center\">\n        <div class=\"row\">\n            <div class=\"mbr-white col-md-12 col-lg-12\">\n\n                <h1 class=\"mbr-section-title mbr-bold align-center mbr-fonts-style\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\">RUMORS OF REVIVAL</h1>\n                <p class=\"mbr-text align-center mbr-bold pb-4 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">EP COMING SOON</p>\n\n                <div class=\"mbr-section-btn pt-4 align-center\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-if=\"showButton\" mbr-theme-style=\"display-4\"><a class=\"btn btn-md btn-black\" href=\"popup:#mbr-popup-m\" data-app-placeholder=\"Type Text\" data-toggle=\"modal\" data-target=\"#mbr-popup-m\"><span class=\"fa fa-arrow-down mbr-iconfont mbr-iconfont-btn\" style=\"font-size: 30px;\"></span></a></div>\n\n            </div>\n        </div>\n    </div>\n\n</section>",
+          "_customHTML": "<section group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"15\" step=\"1\" value=\"15\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"15\" step=\"1\" value=\"15\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Sub Title\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Button\" name=\"showButton\" checked>\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/img-397-2000x1333.jpg\" parallax selected>\n            <input type=\"color\" title=\"Background Color\" value=\"#000000\">\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#d1807c\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.1\" condition=\"overlay && bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div class=\"container-fluid align-center\">\n        <div class=\"row\">\n            <div class=\"mbr-white col-md-12 col-lg-12\">\n\n                <h1 class=\"mbr-section-title mbr-bold align-center mbr-fonts-style\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\">RUMORS OF REVIVAL</h1>\n                <p class=\"mbr-text align-center mbr-bold pb-4 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\"><span style=\"font-weight: normal;\">OUR FIRST EP</span> BURNING BOX <span style=\"font-weight: normal;\">RELEASING FEB 12</span><br>PRE-SAVE IT NOW!</p>\n\n                <div class=\"mbr-section-btn pt-4 align-center\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-if=\"showButton\" mbr-theme-style=\"display-7\"><a class=\"btn btn-md btn-secondary\" href=\"http://burningbox.rumorsofrevival.com\" data-app-placeholder=\"Type Text\"><span class=\"sli-social-spotify mbr-iconfont mbr-iconfont-btn\"></span>PRE-SAVE</a> <a class=\"btn btn-md btn-black\" href=\"https://www.instagram.com/rumorsofrevival/\" data-app-placeholder=\"Type Text\"><span class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>INSTAGRAM</a> <a class=\"btn btn-md btn-black\" href=\"https://www.youtube.com/channel/UCqtv-uv41gaHFpdKPX_-fPw\" data-app-placeholder=\"Type Text\"><span class=\"socicon socicon-youtube mbr-iconfont mbr-iconfont-btn\"></span>YOUTUBE</a></div>\n\n            </div>\n        </div>\n    </div>\n\n</section>",
           "_anchor": "header7-3",
           "_isUserblock": true,
           "_sourceTheme": "audiom4",
